@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: doosanMig
+  profiles:
+    active: local
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: "jdbc:sqlserver://localhost:1433;DatabaseName=doosaMig;sslProtocol=TLSv1.2;encrypt=true;trustServerCertificate=true"
+    username: sa
+    password: 123aaa!@#
+    hikari:
+      auto-commit: true
+      connection-test-query: SELECT 1
+      minimum-idle: 10
+      maximum-pool-size: 50
+external:
+  serviceNOW:
+    authID : "admin"
+    authPWD : "S=laAJ12*ooJ"
+    apiURL : "https://dev120528.service-now.com/api/now"

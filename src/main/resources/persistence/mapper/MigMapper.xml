@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.doosanMig.doosan.persistence.mapper.MigMapper">
+
+    <resultMap id="KCSresponseMap" type="com.doosanMig.doosan.model.Migration.KCS">
+        <result column="Request_ID" property="requestId"/>
+        <result column="RKMTemplateAttachement_11" property="rkmtemplateAttachment11"/>
+        <result column="RKMTemplateAttachement_12" property="rkmtemplateAttachment12"/>
+        <result column="Text" property="text"/>
+        <result column="Title" property="title"/>
+        <result column="Created_Date" property="createDate"/>
+    </resultMap>
+
+    <select id="selectKCSlist" resultMap="KCSresponseMap">
+        SELECT
+            Request_ID,
+            RKMTemplateAttachement_11,
+            RKMTemplateAttachement_12,
+            Text,
+            Title,
+            Created_Date
+        FROM
+            TB_KCS
+    </select>
+
+</mapper>
